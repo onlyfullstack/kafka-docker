@@ -20,37 +20,37 @@ _Note: Kafka utilities are now available._
 You can create a new Kafka topic named `my-topic` as follows:
 
 ```
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic my-topic
+$KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic my-topic
 ```
 
 You can verify that the `my-topic` topic was successfully created by listing all available topics:
 
 ```
-kafka-topics --list --zookeeper localhost:2181
+$KAFKA_HOME/bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
 
 You can add more partitions as follows:
 
 ```
-kafka-topics --zookeeper localhost:2181 --alter --topic my-topic --partitions 16
+$KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic my-topic --partitions 16
 ```
 
 You can delete a topic named `my-topic` as follows:
 
 ```
-kafka-topics --zookeeper localhost:2181 --delete --topic my-topic
+$KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic my-topic
 ```
 
 You can find more details about a topic named `cc_payments` as follows:
 
 ```
-kafka-topics --describe --zookeeper localhost:2181 --topic cc_payments
+$KAFKA_HOME/bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic cc_payments
 ```
 
 You can see the under-replicated partitions for all topics as follows:
 
 ```
-kafka-topics --zookeeper localhost:2181/kafka-cluster --describe --under-replicated-partitions
+$KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181/kafka-cluster --describe --under-replicated-partitions
 ```
 
 # Producers
